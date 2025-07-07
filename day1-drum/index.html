@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Drum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="keys">
+        <div class="key" data-key="65" style="display: flex; flex-direction: column;">
+            <kbd>A</kbd>
+            <span class="sound">click</span>
+        </div>
+        <div class="key" data-key="83" style="display: flex; flex-direction: column;"><kbd>S</kbd><span
+                class="sound">coins</span></div>
+        <div class="key" data-key="68" style="display: flex; flex-direction: column;"><kbd>D</kbd><span
+                class="sound">divinity</span></div>
+        <div class="key" data-key="70" style="display: flex; flex-direction: column;"><kbd>F</kbd><span
+                class="sound">drum</span></div>
+        <div class="key" data-key="71" style="display: flex; flex-direction: column;"><kbd>G</kbd><span
+                class="sound">error</span></div>
+        <div class="key" data-key="72" style="display: flex; flex-direction: column;"><kbd>H</kbd><span
+                class="sound">glass</span></div>
+        <div class="key" data-key="74" style="display: flex; flex-direction: column;"><kbd>J</kbd><span
+                class="sound">level-pass</span></div>
+        <div class="key" data-key="75" style="display: flex; flex-direction: column;"><kbd>K</kbd><span
+                class="sound">metallaphone</span></div>
+        <div class="key" data-key="76" style="display: flex; flex-direction: column;"><kbd>L</kbd><span
+                class="sound">taiko</span></div>
+        <img src="./background.png" alt="">
+    </div>
+
+    <audio data-key="65" src="sounds/click.mp3"></audio>
+    <audio data-key="83" src="sounds/coins.mp3"></audio>
+    <audio data-key="68" src="sounds/divinity.mp3"></audio>
+    <audio data-key="70" src="sounds/drum.mp3"></audio>
+    <audio data-key="71" src="sounds/error.mp3"></audio>
+    <audio data-key="72" src="sounds/glass.mp3"></audio>
+    <audio data-key="74" src="sounds/level-pass.mp3"></audio>
+    <audio data-key="75" src="sounds/metallaphone.mp3"></audio>
+    <audio data-key="76" src="sounds/taiko.mp3"></audio>
+
+    <script>
+        window.addEventListener('keydown', e => {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+            console.log(key)
+            if (typeof audio !== 'undefined') {
+                audio.currentTime = 0
+                key.classList.add("playing")
+                audio.play()
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
