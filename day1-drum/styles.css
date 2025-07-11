@@ -21,7 +21,7 @@
   margin: 1rem;
   font-size: 1.5rem;
   padding: 1rem 0.5rem;
-  transition: all 2.7s ease;
+  transition: all 0.7s ease;
   width: 100%;
   text-align: center;
   color: rgb(255, 255, 255);
@@ -40,7 +40,8 @@ img {
 }
 
 .playing{
-  transform: scale(1.1);
-  border-color: #ffc600;
+  transform: scale(1.2);
+  border-color: red;
   box-shadow: 0 0 10px #ffc600;
+  background-color: green;
 }
